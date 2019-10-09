@@ -8,13 +8,6 @@ mydb = mysql.connector.connect(
     host="localhost",
     user="root",
     passwd="pass"
-
-# creating MySQL DB
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="pass"
-
 )
 
 mycursor = mydb.cursor()
