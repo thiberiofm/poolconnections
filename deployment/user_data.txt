@@ -1,0 +1,8 @@
+#!/bin/bash
+yum update -y && yum update -y
+INTANCE_ID=($curl -s http://169.254.169.254/latest/meta-data/instance-id)
+aws ec2 associate-address --instance-id $INTANCE_ID --allocation eipalloc-00265ac12a5f9052b
+sudo amazon-linux-extras install docker
+sudo service docker start
+sudo docker container run -d -p80:5000 -v db:/tmp dmpreis/gypz_api
+

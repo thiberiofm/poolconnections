@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mysql:
+      image: mysql
+      container_name: db
+      environment:
+          - MYSQL_DATABASE="pool_db"
+          - MYSQL_ROOT_PASSWORD="root"
+          - MYSQL_USER="thiberio"
+          - MYSQL_PASSWORD="Stone2019"
+      volumes:
+      - ./data/db:/docker-entrypoint-initdb.d
+      ports:
+      - "3306:3306"
+  python:
+      build: .
+      ports:
+          - "5000:5000" 
+      container_name: flask_app
