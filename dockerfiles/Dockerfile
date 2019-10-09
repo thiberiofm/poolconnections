@@ -5,14 +5,10 @@ ADD app/ /app
 WORKDIR /app
 
 RUN pip install --no-cache-dir -r requirements.txt \
-    && python3 setupdb.py \
-    && pip3 install Flask \
-    && pip3 install flask_cors \
     && pip3 install mysql-connector-python
 
 EXPOSE 5000
 
-VOLUME ["/tmp"]
-ENV FLASK_APP app.py
-ENTRYPOINT ["python", "-m", "flask", "run", "--host=0.0.0.0"]
+ENV app.py
+ENTRYPOINT ["python", "-m", "run", "--host=0.0.0.0"]
 CMD ["app.py"]
