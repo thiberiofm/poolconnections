@@ -1,10 +1,10 @@
 # Python connection pool
-
-
 This is a simple connection pool app in Python with mysql.
 
 For a real connection pool I would recommend an Architecure with a Load Balancer, a connection pool app and a database cluster to write and read the requests from the client with all monitoring and logging layers.
 
+>  **_NOTE:_**  The deployment at AWS is not done yet.
+ 
 ## Installation
 
 - Python 3.7.4

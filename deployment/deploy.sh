@@ -1,5 +1,5 @@
 #!/bin/bash
-HSTNM='GYPZ-API'
+HSTNM='pool_connection'
 aws ec2 run-instances \
     --image-id ami-0b60e7d34d8ba6db4 \
     --count 1 --instance-type t2.micro  \
